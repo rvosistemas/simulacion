@@ -46,15 +46,23 @@ public class poker extends javax.swing.JInternalFrame {
         // SE PERSONALIZA TODO EL TEXTO CON FUENTES DEL PAQUETE TIPOGRAFIA
         tipoFuente = new Fuentes(); // crea tipo de fuente para usar atributos y procedimientos
         ///----------------///----- ETIQUETAS -----///---------------///
-        etiq_tituloCorridasAYB_.setFont(tipoFuente.fuente(tipoFuente.GOD, 0, 24));
+        etiq_tituloPoker_.setFont(tipoFuente.fuente(tipoFuente.GOD, 0, 24));
         etiq_resultado_.setFont(tipoFuente.fuente(tipoFuente.GOD, 0, 18));
         etiq_resultado_.setVisible(false);
+        etiq_buscarChi1_.setVisible(false);
+        etiq_buscarChi2_.setVisible(false);
+        etiq_buscarChi3_.setVisible(false);
+        etiq_colChi_.setVisible(false);
+        etiq_filaChi_.setVisible(false);
+        etiq_aceptacion_.setVisible(false);
         ///----------------///----- TABLAS -----///---------------///
         tabla_numerosAleatorios_.setVisible(false);
         ///----------------///----- TEXTO -----///---------------///
-
+        txt_aceptacion_.setVisible(false);
+        txt_valorChi_.setVisible(false);
         ///----------------///----- BOTONES -----///---------------///
-
+        btn_calcular_.setVisible(false);
+        btn_resultado_.setVisible(false);
         
     }
 
@@ -67,19 +75,28 @@ public class poker extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        etiq_tituloCorridasAYB_ = new javax.swing.JLabel();
+        etiq_tituloPoker_ = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_numerosAleatorios_ = new javax.swing.JTable();
         btn_importar_ = new javax.swing.JButton();
         etiq_resultado_ = new javax.swing.JLabel();
-        etiq_resultado_1 = new javax.swing.JLabel();
+        btn_calcular_ = new javax.swing.JButton();
+        etiq_aceptacion_ = new javax.swing.JLabel();
+        etiq_buscarChi1_ = new javax.swing.JLabel();
+        etiq_buscarChi2_ = new javax.swing.JLabel();
+        etiq_buscarChi3_ = new javax.swing.JLabel();
+        etiq_filaChi_ = new javax.swing.JLabel();
+        txt_aceptacion_ = new javax.swing.JTextField();
+        btn_resultado_ = new javax.swing.JButton();
+        etiq_colChi_ = new javax.swing.JLabel();
+        txt_valorChi_ = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
 
-        etiq_tituloCorridasAYB_.setText("PRUEBA POKER");
+        etiq_tituloPoker_.setText("PRUEBA POKER");
 
         tabla_numerosAleatorios_.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,7 +126,31 @@ public class poker extends javax.swing.JInternalFrame {
 
         etiq_resultado_.setText("RESULTADO");
 
-        etiq_resultado_1.setText("RESULTADO");
+        btn_calcular_.setText("Calcular");
+        btn_calcular_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_calcular_ActionPerformed(evt);
+            }
+        });
+
+        etiq_aceptacion_.setText("Digite el nivel de aceptacion (solo numero no escribir %): ");
+
+        etiq_buscarChi1_.setText("la columna es el numero mas cercano a:");
+
+        etiq_buscarChi2_.setText("y la fila es el numero mas cercano a:");
+
+        etiq_buscarChi3_.setText("Valor encontrado en tabla chi:");
+
+        etiq_filaChi_.setText("fila M");
+
+        btn_resultado_.setText("Resultado");
+        btn_resultado_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_resultado_ActionPerformed(evt);
+            }
+        });
+
+        etiq_colChi_.setText("col M");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,37 +160,73 @@ public class poker extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etiq_tituloCorridasAYB_)
-                            .addComponent(etiq_resultado_1)))
+                        .addComponent(etiq_tituloPoker_))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(btn_importar_)))
-                .addContainerGap(36, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(139, 139, 139)
-                    .addComponent(etiq_resultado_)
-                    .addContainerGap(139, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etiq_aceptacion_)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(etiq_buscarChi1_)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(etiq_colChi_))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_aceptacion_, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_calcular_))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(etiq_buscarChi3_)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_valorChi_, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_resultado_))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(btn_importar_))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(etiq_buscarChi2_)
+                        .addGap(18, 18, 18)
+                        .addComponent(etiq_filaChi_))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(etiq_resultado_)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(etiq_tituloCorridasAYB_)
+                .addComponent(etiq_tituloPoker_)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_importar_)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(etiq_resultado_1)
-                .addGap(20, 20, 20))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(176, 176, 176)
-                    .addComponent(etiq_resultado_)
-                    .addContainerGap(177, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiq_aceptacion_)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_aceptacion_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_calcular_))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiq_buscarChi1_)
+                    .addComponent(etiq_colChi_))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiq_buscarChi2_)
+                    .addComponent(etiq_filaChi_))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiq_buscarChi3_)
+                    .addComponent(txt_valorChi_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_resultado_))
+                .addGap(18, 18, 18)
+                .addComponent(etiq_resultado_)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,6 +248,42 @@ public class poker extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_btn_importar_ActionPerformed
+
+    private void btn_calcular_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcular_ActionPerformed
+        if( "".equals(txt_aceptacion_.getText()) ){
+            JOptionPane.showMessageDialog(null, "Debe digitar el valor del nivel de confianza/aceptacion");
+        }else{
+            calcular();
+            double alfa = ( 100 - Double.parseDouble( txt_aceptacion_.getText() ) )/100;
+            etiq_filaChi_.setText( String.valueOf( tabla_numerosAleatorios_.getRowCount()-1 ) );
+            etiq_colChi_.setText( String.valueOf( alfa ) );
+            etiq_filaChi_.setVisible(true);
+            etiq_colChi_.setVisible(true);
+            etiq_aceptacion_.setVisible(true);
+            etiq_buscarChi1_.setVisible(true);
+            etiq_buscarChi2_.setVisible(true);
+            etiq_buscarChi3_.setVisible(true);
+            txt_valorChi_.setVisible(true);
+            btn_resultado_.setVisible(true);
+        }
+    }//GEN-LAST:event_btn_calcular_ActionPerformed
+
+    private void btn_resultado_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resultado_ActionPerformed
+        if( "".equals(txt_valorChi_.getText()) ){
+            JOptionPane.showMessageDialog(null, "Debe digitar el valor encontrado en tabla chi");
+        }else{
+            double valorTxt = Double.parseDouble( txt_valorChi_.getText() );
+            if( valorTxt > resultadoGlobal ){
+                JOptionPane.showMessageDialog(null, "El valor de la tablaChi es: "+valorTxt+" y es mayor que el valor encontrado: "+resultadoGlobal+", \n por lo tanto es RECHAZADO");
+                etiq_resultado_.setText("RECHAZADO valor encontrado es de: "+resultadoGlobal);
+                etiq_resultado_.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "El valor de la tablaChi es: "+valorTxt+" y es menor que el valor encontrado: "+resultadoGlobal+", \n por lo tanto es ACEPTADO");
+                etiq_resultado_.setText("ACEPTADO! valor encontrado es de: "+resultadoGlobal);
+                etiq_resultado_.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_btn_resultado_ActionPerformed
 
 // ----------- FUNCIONES Y PROCEDIMIENTOS -------------------------------------------/////////////////////////////////
     
@@ -244,12 +357,21 @@ public class poker extends javax.swing.JInternalFrame {
                         switch ( stringImportados.get(i).length() ) {
                             case 1:
                                 rellenar = "000";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             case 2:
                                 rellenar = "00";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             case 3:
                                 rellenar = "0";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             default:
                                 break;
@@ -263,15 +385,27 @@ public class poker extends javax.swing.JInternalFrame {
                         switch ( stringImportados.get(i).length() ) {
                             case 1:
                                 rellenar = "0000";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             case 2:
                                 rellenar = "000";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             case 3:
                                 rellenar = "00";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             case 4:
                                 rellenar = "0";
+                                aux = stringImportados.get(i);
+                                aux = aux+rellenar;
+                                stringImportados.set(i, aux);
                                 break;
                             default:
                                 break;
@@ -290,29 +424,49 @@ public class poker extends javax.swing.JInternalFrame {
             }
             
             //////// --- CONTAR duplas, triples, entre otros  --- ////////
-            ArrayList<Integer> naturales = new ArrayList<>();
-            ArrayList<Integer> categorias = new ArrayList<>();
+            
+            ArrayList<Integer> naturales    = new ArrayList<>();
+            ArrayList<Integer> categorias3   = new ArrayList<>(); // categorias 3 decimales
+            ArrayList<Integer> categorias4   = new ArrayList<>(); // categorias 4 decimales
+            ArrayList<Integer> categorias5   = new ArrayList<>(); // categorias 5 decimales
+            
             int posNatural;
             int auxPos;
             int auxCate;
+            
+            int todDifer;
+            int unPar;
+            int dosPares; 
+            int tercia;
+            int terciaPar;
+            int poker;
+            int quintilla;
+            
             for (int h = 0; h < 10; h++) {
                 naturales.add(0);
             }
+            
             for (int h = 0; h < 3; h++) {
-                categorias.add(0);
+                categorias3.add(0);
+            }
+            
+            for (int h = 0; h < 5; h++) {
+                categorias4.add(0);
+            }
+            
+            for (int h = 0; h < 7; h++) {
+                categorias5.add(0);
             }
             
             switch ( decimal ) {
-                case 3:
-                    int todDifer;
-                    int unPar;
-                    int triple;
+                
+                case 3: /////   3 DECIMALES
                     
                     for (int i = 0; i < numFilas; i++) {
                         
-                        todDifer = 0;
-                        unPar = 0;
-                        triple = 0;
+                        todDifer    = 0;
+                        unPar       = 0;
+                        tercia      = 0;
                         
                         String revisar = stringImportados.get(i);
                         String[] arrRevisar = revisar.split("");
@@ -326,9 +480,10 @@ public class poker extends javax.swing.JInternalFrame {
                         System.out.println("arreglo naturales con cantidad");
                         
                         for (int k = 0; k < 10; k++) {
-                            System.out.println( naturales.get(k) );
+                            System.out.println("numero: "+k+", cantidad: "+naturales.get(k) );
                             if( naturales.get(k) == 3 ){
-                                triple = 1;
+                                tercia = 1;
+                                unPar = 0;
                                 break;
                             }
                             if( naturales.get(k) == 2 ){
@@ -337,42 +492,288 @@ public class poker extends javax.swing.JInternalFrame {
                             }
                         }
                         
-                        if( unPar == 0 && triple == 0  ){
+                        if( unPar == 0 && tercia == 0  ){
                             todDifer = 1;
                         }
                         
-                        auxCate = categorias.get(0);
-                        categorias.set(0, auxCate+todDifer);
+                        auxCate = categorias3.get(0);
+                        categorias3.set(0, auxCate+todDifer);
                         
-                        auxCate = categorias.get(1);
-                        categorias.set(1, auxCate+unPar);
+                        auxCate = categorias3.get(1);
+                        categorias3.set(1, auxCate+unPar);
                         
-                        auxCate = categorias.get(2);
-                        categorias.set(2, auxCate+triple);
+                        auxCate = categorias3.get(2);
+                        categorias3.set(2, auxCate+tercia);
                         
                         for (int h = 0; h < 10; h++) {
                             naturales.set(h, 0);
                         }
                     }
                     
-                    System.out.println("cantidad todos diferentes:  "+categorias.get(0));
-                    System.out.println("cantidad un par:            "+categorias.get(1));
-                    System.out.println("cantidad triples:           "+categorias.get(2));
+                    System.out.println("cantidad todos diferentes:  "+categorias3.get(0));
+                    System.out.println("cantidad un par:            "+categorias3.get(1));
+                    System.out.println("cantidad tercia:           "+categorias3.get(2));
                     
                     break;
-                case 4:
+                    
+                case 4:   /////   4 DECIMALES
+                    
+                    for (int i = 0; i < numFilas; i++) {
+                        
+                        todDifer    = 0;
+                        unPar       = 0;
+                        dosPares    = 0;
+                        tercia      = 0;
+                        poker       = 0;
+                        
+                        String revisar = stringImportados.get(i);
+                        String[] arrRevisar = revisar.split("");
+                        
+                        for (int j = 0; j < revisar.length(); j++) {
+                            posNatural = Integer.parseInt( arrRevisar[j] );
+                            auxPos = naturales.get( posNatural );
+                            naturales.set(posNatural , auxPos+1 );
+                        }
+                        
+                        System.out.println("arreglo naturales con cantidad");
+                        
+                        for (int k = 0; k < 10; k++) {
+                            System.out.println("numero: "+k+", cantidad: "+naturales.get(k) );
+                            if( naturales.get(k) == 4 ){
+                                poker = 1;
+                                break;
+                            }
+                            if( naturales.get(k) == 3 ){
+                                tercia = 1;
+                                break;
+                            }
+                            if( naturales.get(k) == 2 ){
+                                unPar++;
+                                if( unPar == 2 ){
+                                    break; 
+                                }
+                            }
+                        }
+                        
+                        if( unPar == 2 ){
+                            unPar = 0;
+                            dosPares = 1;
+                        }
+                        
+                        if( unPar == 0 && dosPares == 0 && tercia == 0 && poker == 0 ){
+                            todDifer = 1;
+                        }
+                        
+                        auxCate = categorias4.get(0);
+                        categorias4.set(0, auxCate+todDifer);
+                        
+                        auxCate = categorias4.get(1);
+                        categorias4.set(1, auxCate+unPar);
+                        
+                        auxCate = categorias4.get(2);
+                        categorias4.set(2, auxCate+dosPares);
+                        
+                        auxCate = categorias4.get(3);
+                        categorias4.set(3, auxCate+tercia);
+                        
+                        auxCate = categorias4.get(4);
+                        categorias4.set(4, auxCate+poker);
+                        
+                        for (int h = 0; h < 10; h++) { // reinicia el conteo de numeros
+                            naturales.set(h, 0);
+                        }
+                    }
+                    
+                    System.out.println("cantidad todos diferentes:  "+categorias4.get(0));
+                    System.out.println("cantidad un par:            "+categorias4.get(1));
+                    System.out.println("cantidad dos pares:         "+categorias4.get(2));
+                    System.out.println("cantidad tercia:           "+categorias4.get(3));
+                    System.out.println("cantidad poker  :           "+categorias4.get(4));
                     
                     break;
-                case 5:
+                    
+                case 5:  /////   5 DECIMALES
+                    
+                    for (int i = 0; i < numFilas; i++) {
+                        
+                        todDifer    = 0;
+                        unPar       = 0;
+                        dosPares    = 0;
+                        tercia      = 0;
+                        terciaPar   = 0;
+                        poker       = 0;
+                        quintilla   = 0;
+                        
+                        String revisar = stringImportados.get(i);
+                        String[] arrRevisar = revisar.split("");
+                        
+                        for (int j = 0; j < revisar.length(); j++) {
+                            posNatural = Integer.parseInt( arrRevisar[j] );
+                            auxPos = naturales.get( posNatural );
+                            naturales.set(posNatural , auxPos+1 );
+                        }
+                        
+                        System.out.println("arreglo naturales con cantidad");
+                        
+                        for (int k = 0; k < 10; k++) {
+                            System.out.println("numero: "+k+", cantidad: "+naturales.get(k) );
+                            
+                            if( naturales.get(k) == 5 ){
+                                quintilla = 1;
+                                break;
+                            }
+                            if( naturales.get(k) == 4 ){
+                                poker = 1;
+                                break;
+                            }
+                            if( naturales.get(k) == 3 ){
+                                tercia = 1;
+                            }
+                            if( naturales.get(k) == 2 ){
+                                unPar++;
+                                if( unPar == 2 ){
+                                    break; 
+                                }
+                            }
+                        }
+                        
+                        if( unPar == 2 ){
+                            unPar = 0;
+                            dosPares = 1;
+                        }
+                        
+                        if( tercia == 1 && unPar == 1 ){
+                            tercia = 0;
+                            unPar = 0;
+                            terciaPar = 1;
+                        }
+                        
+                        if( unPar == 0 && dosPares == 0 && tercia == 0 && terciaPar == 0 && poker == 0 && quintilla == 0 ){
+                            todDifer = 1;
+                        }
+                        
+                        auxCate = categorias5.get(0);
+                        categorias5.set(0, auxCate+todDifer);
+                        
+                        auxCate = categorias5.get(1);
+                        categorias5.set(1, auxCate+unPar);
+                        
+                        auxCate = categorias5.get(2);
+                        categorias5.set(2, auxCate+dosPares);
+                        
+                        auxCate = categorias5.get(3);
+                        categorias5.set(3, auxCate+tercia);
+                        
+                        auxCate = categorias5.get(4);
+                        categorias5.set(4, auxCate+terciaPar);
+                        
+                        auxCate = categorias5.get(5);
+                        categorias5.set(5, auxCate+poker);
+                        
+                        auxCate = categorias5.get(6);
+                        categorias5.set(6, auxCate+quintilla);
+                        
+                        for (int h = 0; h < 10; h++) { // reinicia el conteo de numeros
+                            naturales.set(h, 0);
+                        }
+                    }
+                    
+                    System.out.println("cantidad todos diferentes:  "+categorias5.get(0));
+                    System.out.println("cantidad un par:            "+categorias5.get(1));
+                    System.out.println("cantidad dos pares:         "+categorias5.get(2));
+                    System.out.println("cantidad tercia:            "+categorias5.get(3));
+                    System.out.println("cantidad tercia y par:      "+categorias5.get(4));
+                    System.out.println("cantidad poker:             "+categorias5.get(5));
+                    System.out.println("cantidad quintilla:         "+categorias5.get(6));
                     
                     break;
                 default:
                     break;
             }
-            /*System.out.println("arreglo naturales con cantidad");
-            for (int i = 0; i < 10; i++) {
-                naturales.get(i);
-            }*/
+            
+            //////// --- SE CALCULAR CON LAS PROBABILIDADES  --- ////////
+            
+            /*int posNatural;
+            int auxPos;
+            int auxCate;*/
+            
+            double todDiferProba;
+            double unParProba;
+            double dosParesProba; 
+            double terciaProba;
+            double terciaParProba;
+            double pokerProba;
+            double quintillaProba;
+            
+            double resultado = 0;
+            
+            switch( decimal ){
+                case 3:
+                    
+                    todDiferProba   = 0.72 * numFilas;
+                    unParProba      = 0.27 * numFilas;
+                    terciaProba     = 0.01 * numFilas;
+                    
+                    resultado = resultado + ( ( Math.pow( todDiferProba - categorias3.get(0) , 2) ) / todDiferProba );
+                    resultado = resultado + ( ( Math.pow( unParProba    - categorias3.get(1) , 2) ) / unParProba );
+                    resultado = resultado + ( ( Math.pow( terciaProba   - categorias3.get(2) , 2) ) / terciaProba );
+                    
+                    resultadoGlobal = resultado;
+                    
+                    JOptionPane.showMessageDialog(null, "EL resultado calculado es: "+resultado);
+                    
+                    System.out.println("resultado es: "+resultado);
+                    
+                    break;
+                case 4:
+                    
+                    todDiferProba   = 0.5040 * numFilas;
+                    unParProba      = 0.4320 * numFilas;
+                    dosParesProba   = 0.0270 * numFilas;
+                    terciaProba     = 0.0360 * numFilas;
+                    pokerProba      = 0.0010 * numFilas;
+                    
+                    resultado = resultado + ( ( Math.pow( todDiferProba - categorias4.get(0) , 2) ) / todDiferProba );
+                    resultado = resultado + ( ( Math.pow( unParProba    - categorias4.get(1) , 2) ) / unParProba );
+                    resultado = resultado + ( ( Math.pow( dosParesProba - categorias4.get(2) , 2) ) / dosParesProba );
+                    resultado = resultado + ( ( Math.pow( terciaProba   - categorias4.get(3) , 2) ) / terciaProba );
+                    resultado = resultado + ( ( Math.pow( pokerProba    - categorias4.get(4) , 2) ) / pokerProba );
+                    
+                    resultadoGlobal = resultado;
+                    
+                    JOptionPane.showMessageDialog(null, "EL resultado calculado es: "+resultado);
+                    
+                    System.out.println("resultado es: "+resultado);
+                    
+                    break;
+                case 5:
+                    
+                    todDiferProba   = 0.3024 * numFilas;
+                    unParProba      = 0.3040 * numFilas;
+                    dosParesProba   = 0.1080 * numFilas;
+                    terciaProba     = 0.0090 * numFilas;
+                    terciaParProba  = 0.0720 * numFilas;
+                    pokerProba      = 0.0045 * numFilas;
+                    quintillaProba  = 0.0001 * numFilas;
+                    
+                    resultado = resultado + ( ( Math.pow( todDiferProba     - categorias5.get(0) , 2) ) / todDiferProba );
+                    resultado = resultado + ( ( Math.pow( unParProba        - categorias5.get(1) , 2) ) / unParProba );
+                    resultado = resultado + ( ( Math.pow( dosParesProba     - categorias5.get(2) , 2) ) / dosParesProba );
+                    resultado = resultado + ( ( Math.pow( terciaProba       - categorias5.get(3) , 2) ) / terciaProba );
+                    resultado = resultado + ( ( Math.pow( terciaParProba    - categorias5.get(4) , 2) ) / terciaParProba );
+                    resultado = resultado + ( ( Math.pow( pokerProba        - categorias5.get(5) , 2) ) / pokerProba );
+                    resultado = resultado + ( ( Math.pow( quintillaProba    - categorias5.get(6) , 2) ) / quintillaProba );
+                    
+                    resultadoGlobal = resultado;
+                    
+                    JOptionPane.showMessageDialog(null, "EL resultado calculado es: "+resultado);
+                    
+                    System.out.println("resultado es: "+resultado);
+                    
+                    break;
+                default:
+                    break;
+            }
             
         }else{
             JOptionPane.showMessageDialog(null, "La cantidad de decimales debe ser entre 3 a 5" );
@@ -439,12 +840,9 @@ public class poker extends javax.swing.JInternalFrame {
             }
             respuesta = "Importacion exitosa";
             tabla_numerosAleatorios_.setVisible(true);
-            /*etiq_info_.setVisible(true);
-            etiq_info2_.setVisible(true);
             etiq_aceptacion_.setVisible(true);
             txt_aceptacion_.setVisible(true);
-            btn_calcular_.setVisible(true);*/
-            calcular();
+            btn_calcular_.setVisible(true);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(rootPane, "Error al importar datos desde archivo excel: -> " + e);
         }
@@ -459,11 +857,20 @@ public class poker extends javax.swing.JInternalFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_calcular_;
     public javax.swing.JButton btn_importar_;
+    private javax.swing.JButton btn_resultado_;
+    private javax.swing.JLabel etiq_aceptacion_;
+    private javax.swing.JLabel etiq_buscarChi1_;
+    private javax.swing.JLabel etiq_buscarChi2_;
+    private javax.swing.JLabel etiq_buscarChi3_;
+    private javax.swing.JLabel etiq_colChi_;
+    private javax.swing.JLabel etiq_filaChi_;
     private javax.swing.JLabel etiq_resultado_;
-    private javax.swing.JLabel etiq_resultado_1;
-    private javax.swing.JLabel etiq_tituloCorridasAYB_;
+    private javax.swing.JLabel etiq_tituloPoker_;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tabla_numerosAleatorios_;
+    private javax.swing.JTextField txt_aceptacion_;
+    private javax.swing.JTextField txt_valorChi_;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
@@ -29,25 +29,52 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="etiq_tituloPoker_" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
-                          <Component id="etiq_tituloCorridasAYB_" min="-2" max="-2" attributes="0"/>
-                          <Component id="etiq_resultado_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="etiq_aceptacion_" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="etiq_buscarChi1_" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="etiq_colChi_" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="txt_aceptacion_" min="-2" pref="64" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btn_calcular_" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="etiq_buscarChi3_" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txt_valorChi_" min="-2" pref="64" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btn_resultado_" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="btn_importar_" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="etiq_buscarChi2_" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="etiq_filaChi_" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="etiq_resultado_" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
-                  <Component id="etiq_resultado_" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="139" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,27 +82,43 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="etiq_tituloCorridasAYB_" min="-2" max="-2" attributes="0"/>
+              <Component id="etiq_tituloPoker_" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="184" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="155" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btn_importar_" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="89" max="32767" attributes="0"/>
-              <Component id="etiq_resultado_1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                  <Component id="etiq_resultado_" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="177" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="etiq_aceptacion_" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txt_aceptacion_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_calcular_" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="etiq_buscarChi1_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiq_colChi_" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="etiq_buscarChi2_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiq_filaChi_" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="etiq_buscarChi3_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_valorChi_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_resultado_" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="etiq_resultado_" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="etiq_tituloCorridasAYB_">
+    <Component class="javax.swing.JLabel" name="etiq_tituloPoker_">
       <Properties>
         <Property name="text" type="java.lang.String" value="PRUEBA POKER"/>
       </Properties>
@@ -121,10 +164,55 @@
         <Property name="text" type="java.lang.String" value="RESULTADO"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="etiq_resultado_1">
+    <Component class="javax.swing.JButton" name="btn_calcular_">
       <Properties>
-        <Property name="text" type="java.lang.String" value="RESULTADO"/>
+        <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_calcular_ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiq_aceptacion_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Digite el nivel de aceptacion (solo numero no escribir %): "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiq_buscarChi1_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="la columna es el numero mas cercano a:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiq_buscarChi2_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="y la fila es el numero mas cercano a:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiq_buscarChi3_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Valor encontrado en tabla chi:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiq_filaChi_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="fila M"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_aceptacion_">
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_resultado_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Resultado"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_resultado_ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiq_colChi_">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="col M"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_valorChi_">
     </Component>
   </SubComponents>
 </Form>

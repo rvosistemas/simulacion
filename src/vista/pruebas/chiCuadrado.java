@@ -251,7 +251,7 @@ public class chiCuadrado extends javax.swing.JInternalFrame {
             double valorTxt = Double.parseDouble( txt_valorChi_.getText() );
             if( valorTxt > resultadoGlobal ){
                 JOptionPane.showMessageDialog(null, "El valor de la tablaChi es: "+valorTxt+" y es mayor que el valor encontrado: "+resultadoGlobal+", \n por lo tanto es RECHAZADO");
-                etiq_resultado_.setText("RECHAZADO");
+                etiq_resultado_.setText("RECHAZADO valor encontrado es de: "+resultadoGlobal);
                 etiq_resultado_.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "El valor de la tablaChi es: "+valorTxt+" y es menor que el valor encontrado: "+resultadoGlobal+", \n por lo tanto es ACEPTADO");
